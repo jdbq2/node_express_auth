@@ -1,0 +1,17 @@
+{
+    "name": "autenticacion_autorizacion_node",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev:client": "cd client && npm run dev",
+        "dev:server": "cd server && npm run server",
+        "dev:all": "npm run client && npm run server",
+        "deploy:client": "cd client && npm run build",
+        "deploy:server": "cd server npm run build",
+        "deploy:all": "npm run deploy:client && npm run deploy:server"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

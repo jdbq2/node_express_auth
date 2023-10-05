@@ -9,6 +9,8 @@ const startApp = async () => {
     try {
         await db.authenticate();
         console.log("DB Connected");
+        await db.sync();
+        console.log("DB Sync");
         server.listen(process.env.PORT, () => {
             console.log(`Listen on Port ${process.env.PORT}`);
         });

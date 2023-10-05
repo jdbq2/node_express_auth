@@ -1,4 +1,5 @@
 import { FieldErrors, useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 interface FormValues {
     email: string;
@@ -6,15 +7,13 @@ interface FormValues {
 }
 
 const LoginForm = () => {
-    const { register, handleSubmit, formState, setError } = useForm<FormValues>(
-        {
-            defaultValues: {
-                email: "",
-                password: "",
-            },
-            mode: "onBlur",
-        }
-    );
+    const { register, handleSubmit, formState } = useForm<FormValues>({
+        defaultValues: {
+            email: "",
+            password: "",
+        },
+        mode: "onBlur",
+    });
     const { errors } = formState;
 
     const onError = (errors: FieldErrors<FormValues>) => {
@@ -83,6 +82,17 @@ const LoginForm = () => {
             <button className="button mt-5 bg-[white] px-2 py-1" type="submit">
                 Iniciar Sesión
             </button>
+            <button className="button mt-5 bg-[white] px-2 py-1" type="submit">
+                Iniciar Sesión con Google
+            </button>
+            <Link to="/auth/register">
+                <button
+                    className="button mt-5 bg-[white] px-2 py-1"
+                    type="submit"
+                >
+                    Registrarse
+                </button>
+            </Link>
         </form>
     );
 };
